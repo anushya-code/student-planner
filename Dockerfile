@@ -11,8 +11,8 @@ RUN npm install --omit=dev
 COPY . .
 RUN mkdir -p /app/data
 
-ENV PORT=3000
+ENV PORT=8080
 ENV DB_PATH=/app/data/study.db
-EXPOSE 3000
+EXPOSE 8080
 
 CMD ["node", "server.js"]
