@@ -1,0 +1,57 @@
+:root{--side:#1b4a32;--side2:#2d6244;--bg:#f7f5ea;--ink:#1c3326;--mute:#5b6d62;--line:#e3e1d2;--btn:#1f5136;--red:#c0392b}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.5 "Segoe UI",system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink)}
+.app{display:flex;min-height:100vh}
+.sidebar{width:230px;flex:none;background:var(--side);color:#fff;display:flex;flex-direction:column;padding:22px 14px;position:sticky;top:0;height:100vh}
+.brand{font-size:21px;font-weight:700;margin:0 8px 28px}
+.leaf{margin-right:6px}
+.nav{display:flex;align-items:center;gap:12px;width:100%;background:none;border:0;color:#fff;font:inherit;font-size:16px;padding:11px 14px;border-radius:10px;cursor:pointer;margin-bottom:6px;text-align:left}
+.nav:hover{background:rgba(255,255,255,.08)}
+.nav.on{background:var(--side2)}
+.quote{margin-top:auto;font-family:Georgia,serif;font-style:italic;font-size:15px;color:#d6e6da;padding:8px;position:relative}
+.sprig{display:block;font-size:44px;opacity:.5;margin-bottom:6px;font-style:normal}
+main{flex:1;min-width:0;padding:34px 40px}
+h1{margin:0;font-size:32px;color:#14412a}
+h2{margin:0 0 14px;font-size:20px;color:#14412a}
+.sub{margin:4px 0 24px;color:#2c5a63;font-size:18px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:24px}
+.stat{border-radius:16px;padding:18px;border:1px solid var(--line);font-size:17px}
+.stat b{display:block;font-size:34px;margin-top:4px}
+.ico{font-size:26px;margin-bottom:6px}
+.green{background:#e6f5e8;border-color:#cfe8d3}.blue{background:#e4f1fb;border-color:#cde3f3}.yellow{background:#fdf5d8;border-color:#f1e5b0}
+.upcoming{background:#eaf1e6;border:1px solid var(--line);border-left:7px solid var(--btn);border-radius:14px;padding:20px 24px}
+.upcoming h2{margin-bottom:10px}
+.up-title{font-size:24px;font-weight:700;color:#14412a}
+.late{color:var(--red);font-weight:700}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:18px;max-width:900px}
+label{display:block;font-weight:600;font-size:14px;margin:0 0 6px}
+input,select{width:100%;font:inherit;padding:10px 12px;border:1px solid #d6d9cc;border-radius:8px;background:#fff;color:var(--ink);margin-bottom:14px}
+input:focus,select:focus{outline:2px solid #4c9a68;border-color:transparent}
+.form2{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}
+.btn{font:inherit;font-weight:600;border:0;border-radius:8px;padding:10px 18px;cursor:pointer;margin-right:8px}
+.dark{background:var(--btn);color:#fff}.grey{background:#e4e6df;color:var(--ink)}
+.msg{color:var(--red);margin:10px 0 0;min-height:1em;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px}
+.sc{border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+.badge{width:60px;height:60px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;font-weight:800;font-size:22px}
+.b-js{background:#fbe9a0;color:#222}.b-php{background:#d9d1f5;color:#2b2358;font-size:20px}.b-web{background:#d4ecf7;font-size:26px}.b-x{background:#d8efe0;color:#14412a}
+.sc small{color:var(--mute)}
+.sc .name{font-weight:600}
+.del{background:#fde2e0;color:#b02a1d;border:0;border-radius:8px;padding:7px 14px;font:inherit;font-size:14px;cursor:pointer;margin-top:12px}
+.tablewrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th{background:#e9f2e2;text-align:left;padding:10px;font-size:14px}
+td{padding:12px 10px;border-bottom:1px solid var(--line)}
+.pill{display:inline-block;padding:3px 12px;border-radius:99px;font-size:13px;font-weight:600}
+.p-Completed{background:#d6f0dc;color:#1f6b36}.p-In-Progress{background:#d8e9f8;color:#1d5a8f}.p-Pending{background:#fbeeb8;color:#8a6a0a}
+.edit{background:#dcebf9;color:#1d5a8f;border:0;border-radius:8px;padding:6px 14px;font:inherit;font-size:14px;cursor:pointer;margin-right:6px}
+td .del{margin:0;padding:6px 14px}
+@media(max-width:760px){
+  .app{flex-direction:column}
+  .sidebar{width:100%;height:auto;position:static;flex-direction:row;flex-wrap:wrap;align-items:center;padding:12px}
+  .brand{margin:0 12px 0 4px;font-size:18px}
+  .quote{display:none}
+  nav{display:flex;gap:4px;flex-wrap:wrap}
+  .nav{width:auto;margin:0;padding:8px 12px;font-size:14px}
+  main{padding:22px 16px}.form2{grid-template-columns:1fr}h1{font-size:26px}
+}

@@ -1,0 +1,11 @@
+{
+  "name": "study-planner",
+  "version": "1.0.0",
+  "description": "Mini Student Study Planner - subjects, assignments, deadlines and status",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand"><span class="leaf">🌿</span> Study Planner</div>
+    <nav>
+      <button class="nav on" data-view="dashboard"><span>🏠</span> Dashboard</button>
+      <button class="nav" data-view="subjects"><span>📖</span> My Subjects</button>
+      <button class="nav" data-view="assignments"><span>📋</span> Assignments</button>
+    </nav>
+    <div class="quote"><span class="sprig">🌿</span>“Small steps every day lead to big results.”</div>
+  </aside>
+
+  <main>
+    <!-- Dashboard -->
+    <section id="dashboard" class="view">
+      <h1>Welcome to Study Planner 🌿</h1>
+      <p class="sub">Organize your subjects, assignments and deadlines.</p>
+      <div class="stats">
+        <div class="stat green"><div class="ico">📖</div>Total Subjects<b id="sSubjects">0</b></div>
+        <div class="stat blue"><div class="ico">📋</div>Total Assignments<b id="sTotal">0</b></div>
+        <div class="stat green"><div class="ico">✅</div>Completed<b id="sDone">0</b></div>
+        <div class="stat yellow"><div class="ico">🕒</div>Pending<b id="sPending">0</b></div>
+        <div class="stat blue"><div class="ico">⏳</div>In Progress<b id="sProg">0</b></div>
+      </div>
+      <div class="upcoming">
+        <h2>📅 Upcoming Deadline</h2>
+        <div id="upBody"></div>
+      </div>
+    </section>
+
+    <!-- My Subjects -->
+    <section id="subjects" class="view" hidden>
+      <h1>📖 My Subjects</h1>
+      <p class="sub">Add and manage your subjects.</p>
+      <div class="card">
+        <h2>📗 Add New Subject</h2>
+        <label for="subName">Subject Name</label>
+        <input id="subName" placeholder="Enter subject name" maxlength="40">
+        <button id="addSub" class="btn dark">+ Add Subject</button>
+        <p id="subMsg" class="msg"></p>
+      </div>
+      <div class="card">
+        <h2>📖 Available Subjects</h2>
+        <div id="subGrid" class="grid"></div>
+      </div>
+    </section>
+
+    <!-- Assignments -->
+    <section id="assignments" class="view" hidden>
+      <h1>📋 My Assignments</h1>
+      <p class="sub">Track, manage and complete your assignments.</p>
+      <div class="card">
+        <h2 id="formTitle">📋 Add Assignment</h2>
+        <div class="form2">
+          <div><label for="aSub">Subject</label><select id="aSub"></select></div>
+          <div><label for="aTitle">Assignment Name</label><input id="aTitle" placeholder="Enter assignment name" maxlength="60"></div>
+          <div><label for="aDate">Deadline</label><input id="aDate" type="date"></div>
+          <div><label for="aStatus">Status</label>
+            <select id="aStatus"><option>Pending</option><option>In Progress</option><option>Completed</option></select></div>
+        </div>
+        <button id="saveAss" class="btn dark">+ Add Assignment</button>
+        <button id="cancelAss" class="btn grey">Cancel</button>
+        <p id="assMsg" class="msg"></p>
+      </div>
+      <div class="card form2">
+        <div><label for="q">Search</label><input id="q" placeholder="🔍 Search assignments..."></div>
+        <div><label for="f">Filter by Status</label>
+          <select id="f"><option value="">All Statuses</option><option>Pending</option><option>In Progress</option><option>Completed</option></select></div>
+      </div>
+      <div class="card">
+        <h2>🌱 Assignment List</h2>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>Subject</th><th>Assignment</th><th>Deadline</th><th>Status</th><th>Actions</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+        <p id="empty" class="msg" hidden>No assignments found.</p>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
